@@ -1,32 +1,31 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+    <ul>
+      <li v-for="(user) in users" :key="user.id">{{user.name}}</li>
+    </ul>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import axios from 'axios'
+export default {
+    data() {
+        return {
+          users:[]
+        };
+    },
+    created() {
 
-#nav {
-  padding: 30px;
+    },
+    mounted() {
+      axios.get('http://localhost:3000/api/user').then(res =>{
+        this.users = res.data
+      })
+    },
+    methods: {
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
     }
-  }
-}
+};
+</script>
+
+<style scoped lang="scss">
+
 </style>
