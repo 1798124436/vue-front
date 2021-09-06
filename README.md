@@ -27,6 +27,9 @@ npm install nrm -g
 后台服务器
 npm i pm2 -g
 
+webhook 下
+sh vue-back.sh 
+
 
 
 
