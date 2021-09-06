@@ -24,6 +24,22 @@ nvm install stable
 安装全局nrm 便于切换安装源
 npm install nrm -g
 
+后台服务器
+npm i pm2 -g
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 安装docker 
 sudo yum update
 sudo yum remove docker \
